@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KeyboardShortcuts
 
 class ScreenCaptureViewModel: ObservableObject {
     
@@ -37,6 +38,21 @@ class ScreenCaptureViewModel: ObservableObject {
     }
 
     @Published var images = [NSImage]()
+    
+    init() {
+        
+        KeyboardShortcuts.onKeyUp(for: .screenshotCaptureFull) {
+            [self] in self.takeScreenshot(for: .full)
+        }
+        
+        KeyboardShortcuts.onKeyUp(for: .screenshotCaptureWindow) {
+            [self] in self.takeScreenshot(for: .window)
+        }
+        
+        KeyboardShortcuts.onKeyUp(for: .screenshotCaptureArea) {
+            [self] in self.takeScreenshot(for: .area)
+        }
+    }
     
     /// Funcao que realiza a captura de tela mediante o tipo selecionado na tela.
     ///
