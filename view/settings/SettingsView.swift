@@ -12,9 +12,10 @@ struct SettingsView: View {
         TabView {
             KeyboardShortcutsView()
                 .tabItem { Label("Keyboard", systemImage: "keyboard") }
-            Text("Second")
-                .tabItem { Label("Second", systemImage: "gear")}
+            MenuBarSettingsView()
+                .tabItem { Label("MenuBarExtra", systemImage: "rectangle.topthird.inset.filled")}
         }
+        .frame(minWidth: 400, minHeight: 300)
     }
 }
 
