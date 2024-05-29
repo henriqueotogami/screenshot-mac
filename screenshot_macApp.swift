@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct screenshot_macApp: App {
+    @StateObject var viewModel = ScreenCaptureViewModel()
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        Settings {
-            SettingsView()
-        }
+        WindowGroup("Screenshots", id:"main", content: { ContentView(viewModel: viewModel) })
+        Settings { SettingsView() }
     }
 }

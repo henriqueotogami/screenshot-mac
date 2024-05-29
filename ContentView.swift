@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewModel = ScreenCaptureViewModel()
+    @ObservedObject var viewModel: ScreenCaptureViewModel
     
     var body: some View {
         
@@ -50,5 +50,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: ScreenCaptureViewModel())
 }
