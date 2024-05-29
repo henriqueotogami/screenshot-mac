@@ -13,5 +13,8 @@ struct screenshot_macApp: App {
         WindowGroup {
             ContentView()
         }
+        Settings {
+            SettingsView()
+        }
     }
 }
